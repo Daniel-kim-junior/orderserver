@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input Directory {
+  fileList: Upload!
+}
+
+type Query {
+  uploadFile(input: Directory!): Boolean!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
