@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { DirectoryModule } from './directory/directory.module';
 import { join } from 'path';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -11,7 +11,7 @@ import { join } from 'path';
       sortSchema: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
-    DirectoryModule,
+    UploadModule,
   ],
 })
 export class AppModule {}

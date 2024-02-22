@@ -6,7 +6,7 @@ fileNode="pre-commit.js"
 script="node ../server/pre-commit.js"
 preCommitJs="../server/pre-commit.js"
 PORT=50001
-export dependencyData=""
+export DEPENDENCY_DATA=""
 createPreCommit() {
     if [ ! -d "$dirName" ]; then
         mkdir "$dirName"
@@ -25,13 +25,12 @@ createPreCommit() {
 }
 
 findDependency() {
-    dependencyData=1
+    DEPENDENCY_DATA=1
 }
 
 
 
 cd ..
-pwd
 echo "패키지 관리 도구를 선택하세요:"
 options=("npm" "yarn" "pnpm")
 
