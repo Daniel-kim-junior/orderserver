@@ -1,7 +1,7 @@
 # 취약점 분석 Graphql 자동화 프롬프트 엔지니어링(For Node)
 
 ### How to Start
-1. git clone project
+1. 자신이 작업하고 있는 프로젝트 Root에 git clone project
 2. sudo chmod +x ./script.sh && ./script.sh
 3. 자신이 사용하고 있는 Package Manager 선택
 4. 취약점 분석을 받을 메일 입력
