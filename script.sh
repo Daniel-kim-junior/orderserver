@@ -16,15 +16,11 @@ createPreCommit() {
     if [ ! -f "$filePreCommit" ]; then
         touch "$filePreCommit"
     fi
-    if [ ! -f "$fileNode" ]; then
-        touch "$fileNode"
-    fi
 
     echo "취약점 발견 시 전송받을 이메일을 입력하세요"
     read userEmail
     
     echo "$script $userEmail" > "$filePreCommit"
-    cat "$preCommitJs" > "$fileNode"
 }
 
 cd ..
