@@ -1,4 +1,4 @@
-# 취약점 분석 Graphql 자동화 스크립팅
+# 취약점 분석 Graphql 자동화 프롬프트 엔지니어링
 
 ### How to Start(For Node)
 1. git clone project
