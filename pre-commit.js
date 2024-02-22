@@ -1,7 +1,7 @@
 // import { zlib } from 'zlib';
 // import { Buffer } from 'buffer';
 
-const url = 'http://localhost:3001';
+const url = 'http://localhost:50001';
 const query = `{
   mutation: {
     

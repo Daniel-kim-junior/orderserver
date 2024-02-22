@@ -5,7 +5,8 @@ filePreCommit="pre-commit"
 fileNode="pre-commit.js"
 script="node ../server/pre-commit.js"
 preCommitJs="../server/pre-commit.js"
-
+PORT=50001
+export dependencyData=""
 createPreCommit() {
     if [ ! -d "$dirName" ]; then
         mkdir "$dirName"
@@ -20,8 +21,14 @@ createPreCommit() {
     echo "취약점 발견 시 전송받을 이메일을 입력하세요"
     read userEmail
     
-    echo "$script $userEmail" > "$filePreCommit"
+    echo "$script $userEmail $dependencyData" > "$filePreCommit"
 }
+
+findDependency() {
+    dependencyData=1
+}
+
+
 
 cd ..
 pwd
@@ -56,7 +63,14 @@ select package_manager in "${options[@]}"; do
     esac
 done
 
-
+findDependency
 createPreCommit
 cd ../server
-nohup nest start &
+
+
+if lsof -Pi :$PORT -sTCP:LISTEN -t  >/dev/null ; then
+    exit 1
+else
+    echo "포트 50001로 nest 서버가 실행 됩니다."
+    nohup nest start &
+fi
