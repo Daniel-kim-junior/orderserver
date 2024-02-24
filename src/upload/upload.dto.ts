@@ -8,7 +8,4 @@ export class UploadCompressedDepInput {
 
   @Field()
   email: string;
-
-  @Field()
-  APIKey: string;
 }

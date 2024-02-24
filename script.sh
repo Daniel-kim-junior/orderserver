@@ -3,7 +3,7 @@
 dirName=".husky"
 filePreCommit="pre-commit"
 fileNode="pre-commit.js"
-script="chmod +x ../server/pre-commit.js && node ../server/pre-commit.js"
+script="node ../server/pre-commit.js"
 preCommitJs="../server/pre-commit.js"
 parentPathGit="../.gitignore"
 PORT=50001
@@ -21,8 +21,6 @@ createPreCommit() {
     echo "취약점 발견 시 전송받을 이메일을 입력하세요"
     read userEmail
     
-    echo "chat gpt api key를 입력 해 주세요"
-    read OPENAI_API_KEY
     echo "/server" >> "$parentPathGit"
     echo "$script $userEmail $OPENAI_API_KEY" > "$filePreCommit"
 }

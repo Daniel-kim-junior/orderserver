@@ -13,12 +13,11 @@ export class UploadResolver {
     //     return;
     //   }
     // });
-    const openai = new OpenAI({
-      apiKey: input.APIKey,
-    });
+
+    const openai = new OpenAI();
     const result = await openai.chat.completions.create({
-      messages: [{ role: 'system', content: input.compressedString }],
-      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: input.compressedString }],
+      model: 'gpt-4-0125-preview',
     });
     console.log(result.choices[0]);
     return 'upload success';

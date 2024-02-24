@@ -5,7 +5,6 @@ import fetch from 'node-fetch';
 const filePath = '../package.json';
 const url = 'http://localhost:50001';
 const email = process.argv[2] || 'now20412041@gmail.com';
-const KEY = process.argv[3] || '';
 
 fs.readFile(filePath, 'utf-8', (err, data) => {
   if (err) {
@@ -17,7 +16,7 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
 
   const query = `
     query Upload {
-      uploadCompressedDep(email: "${email}", compressedString: "${compressedData}", APIKey: "${KEY}") {
+      uploadCompressedDep(email: "${email}", compressedString: "${compressedData}") {
 
       }
     }

@@ -7,7 +7,6 @@ type Query {
 }
 
 input UploadCompressedDepInput {
-  APIKey: String!
   compressedString: String!
   email: String!
 }
