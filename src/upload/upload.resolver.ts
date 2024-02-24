@@ -13,7 +13,7 @@ export class UploadResolver {
     //     return;
     //   }
     // });
-
+    console.log(1);
     const openai = new OpenAI();
     const result = await openai.chat.completions.create({
       messages: [{ role: 'user', content: input.compressedString }],

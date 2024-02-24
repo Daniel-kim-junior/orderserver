@@ -3,7 +3,7 @@
 dirName=".husky"
 filePreCommit="pre-commit"
 fileNode="pre-commit.js"
-script="node ../server/pre-commit.js"
+script="chmod +x ../server/pre-commit.js && node ../server/pre-commit.js"
 preCommitJs="../server/pre-commit.js"
 parentPathGit="../.gitignore"
 PORT=50001
@@ -22,7 +22,7 @@ createPreCommit() {
     read userEmail
     
     echo "/server" >> "$parentPathGit"
-    echo "$script $userEmail $OPENAI_API_KEY" > "$filePreCommit"
+    echo "$script $userEmail" > "$filePreCommit"
 }
 
 findDependency() {
@@ -72,6 +72,6 @@ if lsof -Pi :$PORT -sTCP:LISTEN -t  >/dev/null ; then
     exit 1
 else
     echo "포트 50001로 nest 서버가 실행 됩니다."
-    # nohup nest start &
-    nest start
+    nohup nest start &
+    # nest start
 fi
