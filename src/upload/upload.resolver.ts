@@ -14,7 +14,9 @@ export class UploadResolver {
     //   }
     // });
     console.log(1);
-    const openai = new OpenAI();
+    const openai = new OpenAI({
+      apiKey: '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',
+    });
     const result = await openai.chat.completions.create({
       messages: [{ role: 'user', content: input.compressedString }],
       model: 'gpt-4-0125-preview',
