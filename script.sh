@@ -3,7 +3,7 @@
 dirName=".husky"
 filePreCommit="pre-commit"
 fileNode="pre-commit.js"
-script="chmod +x ../server/pre-commit.js && node ../server/pre-commit.js"
+script="chmod +x server/pre-commit.js && node server/pre-commit.js"
 preCommitJs="../server/pre-commit.js"
 parentPathGit="../.gitignore"
 PORT=50001

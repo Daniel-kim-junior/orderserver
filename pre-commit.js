@@ -1,12 +1,14 @@
-import * as zlib from 'zlib';
-import * as fs from 'fs';
-import fetch from 'node-fetch';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const zlib = require('zlib');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const fs = require('fs');
+// import fetch from 'node-fetch';
 
 const filePath = '../package.json';
 const url = 'http://localhost:50001';
 const email = process.argv[2] || 'now20412041@gmail.com';
 
-fs.readFile(filePath, 'utf-8', (err, data) => {
+fs.readFile(filePath, 'utf-8', async (err, data) => {
   if (err) {
     console.log(err);
     return;
@@ -21,15 +23,17 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
       }
     }
   `;
-
+  console.log(url);
   async function fetchData() {
-    await fetch(url, {
+    const rst = await fetch(url, {
       method: 'POST',
       body: JSON.stringify({
         query,
       }),
     });
+    return rst;
   }
 
-  fetchData();
+  const rst = await fetchData();
+  console.log(rst);
 });

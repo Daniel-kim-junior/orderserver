@@ -7,21 +7,7 @@ import OpenAI from 'openai';
 export class UploadResolver {
   @Query(() => String)
   async uploadCompressedDep(@Args('input') input: UploadCompressedDepInput) {
-    // Buffer.unzip(input.compressedString, (err, result) => {
-    //   if (err) {
-    //     console.error('디코딩 오류', err);
-    //     return;
-    //   }
-    // });
-    console.log(1);
-    const openai = new OpenAI({
-      apiKey: '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',
-    });
-    const result = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: input.compressedString }],
-      model: 'gpt-4-0125-preview',
-    });
-    console.log(result.choices[0]);
+    console.log(input);
     return 'upload success';
   }
 }
