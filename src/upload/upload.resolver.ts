@@ -1,7 +1,6 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
-import { UploadCompressedDepInput } from './upload.dto';
+import { UploadCompressedDepInput } from './application/graphql/dto/upload.dto';
 // import { zlib } from 'zlib';
-import OpenAI from 'openai';
 
 @Resolver()
 export class UploadResolver {
