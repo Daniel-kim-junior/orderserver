@@ -1,7 +1,7 @@
 import { ValueObject } from './value.object';
 
 export abstract class Identity extends ValueObject {
-  constructor(private readonly AId: string) {
+  constructor(protected readonly AId: string) {
     super();
   }
 }

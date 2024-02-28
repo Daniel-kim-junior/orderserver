@@ -23,7 +23,6 @@ fs.readFile(filePath, 'utf-8', async (err, data) => {
       }
     }
   `;
-  console.log(url);
   async function fetchData() {
     const rst = await fetch(url, {
       method: 'POST',

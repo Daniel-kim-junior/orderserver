@@ -1,5 +1,5 @@
-import { Entity } from './entity.abstract';
-import { Identity } from './identity.value';
+import { Entity } from './entity';
+import { Identity } from '../value/identity';
 
 export class AggregateRoot<AId extends Identity> extends Entity<AId> {
   constructor(

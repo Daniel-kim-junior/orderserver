@@ -1,5 +1,5 @@
-import { AggregateRoot } from '../domain/aggregate.root';
-import { Identity } from '../domain/identity.value';
+import { AggregateRoot } from '../domain/entity/aggregate-root';
+import { Identity } from '../domain/value/identity';
 
 /**
  * out Adapter interface

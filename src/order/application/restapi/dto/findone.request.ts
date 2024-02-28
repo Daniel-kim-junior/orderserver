@@ -1,4 +1,4 @@
-import { Request } from '../../common/request.dto';
+import { Request } from '../../common/request.interface';
 import { Type } from 'class-transformer';
 import { IsNumber, IsNotEmpty, IsBoolean } from 'class-validator';
 import { PartialType, PickType } from '@nestjs/mapped-types';
