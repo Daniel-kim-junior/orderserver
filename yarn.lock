@@ -983,7 +983,7 @@
     uuid "9.0.1"
     ws "8.16.0"
 
-"@nestjs/mapped-types@2.0.5":
+"@nestjs/mapped-types@^2.0.5", "@nestjs/mapped-types@2.0.5":
   version "2.0.5"
   resolved "https://registry.npmjs.org/@nestjs/mapped-types/-/mapped-types-2.0.5.tgz"
   integrity sha512-bSJv4pd6EY99NX9CjBIyn4TVDoSit82DUZlL4I3bqNfy5Gt+gXTa86i3I/i0iIV9P4hntcGM5GyO+FhZAhxtyg==

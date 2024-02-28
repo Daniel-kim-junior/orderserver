@@ -1,15 +1,20 @@
 import { Request } from '../../common/request.dto';
 import { Type } from 'class-transformer';
 import { IsNumber, IsNotEmpty, IsBoolean } from 'class-validator';
+import { PartialType, PickType } from '@nestjs/mapped-types';
 
 export class FindOneRequest implements Request {
   @IsNotEmpty()
   @Type(() => Number)
   @IsNumber()
-  id: number;
+  readonly id: number;
 
   @IsNotEmpty()
   @Type(() => Boolean)
   @IsBoolean()
-  isTrue: boolean;
+  readonly isTrue: boolean;
 }
+
+export class UpdateIdRequest extends PartialType(
+  PickType(FindOneRequest, ['id'] as const),
+) {}
