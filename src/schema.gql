@@ -3,10 +3,14 @@
 # ------------------------------------------------------
 
 type Query {
-  uploadCompressedDep(input: UploadCompressedDepInput!): String!
+  uploadCompressedDep(input: UploadCompressedDepInput!): UploadOutput!
 }
 
 input UploadCompressedDepInput {
   compressedString: String!
   email: String!
+}
+
+type UploadOutput {
+  output: String!
 }

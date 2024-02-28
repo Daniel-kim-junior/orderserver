@@ -1,6 +1,7 @@
 // upload.dto.ts
-import { InputType, Field } from '@nestjs/graphql';
+import { InputType, Field, ObjectType } from '@nestjs/graphql';
 import { Request } from '../../common/request.dto';
+import { Response } from '../../common/response.dto';
 
 @InputType()
 export class UploadCompressedDepInput implements Request {
@@ -9,4 +10,10 @@ export class UploadCompressedDepInput implements Request {
 
   @Field()
   email: string;
+}
+
+@ObjectType()
+export class UploadOutput implements Response {
+  @Field(() => String)
+  output: string;
 }
